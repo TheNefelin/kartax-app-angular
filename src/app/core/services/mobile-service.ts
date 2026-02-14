@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class MobileService {
   private apiResponseService = inject(ApiResponseService)
-  private readonly endpoint = 'categories/public';
+  private readonly endpoint = 'api/categories/public';
 
   getAll(): Observable<ApiResponseModel<CategoryModel[]>> {
     return this.apiResponseService.getAll<ApiResponseModel<CategoryModel[]>>(
