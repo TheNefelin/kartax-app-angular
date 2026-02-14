@@ -1,0 +1,62 @@
+
+@if (loading()) {
+  <div class="flex justify-center text-orange-400">
+    <span class="loading loading-ring loading-xl"></span>
+  </div>
+} @else {
+  <div class="mt-16">
+    @if (categoriesResult()?.isSuccess) {
+
+    <div class="w-full max-w-xl">
+
+      <div class="carousel carousel-center w-full overflow-x-auto scroll-smooth snap-x snap-mandatory">
+        @for (category of categoriesResult()?.result; track $index) {
+          <div 
+            class="carousel-item w-full aspect-video snap-center relative"
+            #carouselItem
+            [attr.data-index]="$index">
+            
+            <img 
+              [ngSrc]="category.img_url" 
+              [alt]="category.name"
+              width="600"
+              height="400"
+              priority
+              class="w-full h-full object-cover">
+
+            <h1 class="absolute top-4 text-orange-400 text-shadow-black text-shadow-md text-3xl font-bold bg-linear-to-r from-white via-white/80 to-transparent p-4 rounded max-w-xl w-full">
+              {{ category.name }}
+            </h1>
+
+            <span class="absolute bottom-4 left-4 p-2 rounded-full border-2 bg-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m4.431 12.822l13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645"/></svg>
+            </span>
+
+            <span class="absolute bottom-4 right-4 p-2 rounded-full border-2 bg-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5.536 21.886a1 1 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886"/></svg>
+            </span>
+          </div>
+        }
+      </div>
+
+      <section class="p-4 pt-0">
+        @if (selectedCategory()) {
+          @for (group of selectedCategory()?.groups; track $index) {
+            <div class="py-4">
+              <app-product-group-component [group]="group" />
+            </div>
+          }
+        }
+      </section>
+    </div>
+      
+    } @else {
+      <div role="alert" class="alert alert-error text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <span>Error! Task failed successfully.</span>
+      </div>
+    }
+  </div>
+}
+
+<app-cart-component/>

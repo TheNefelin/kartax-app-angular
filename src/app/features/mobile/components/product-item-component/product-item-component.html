@@ -1,0 +1,25 @@
+  <details class="collapse collapse-arrow bg-base-300 border border-base-100" name="my-accordion-det-1">
+    <summary class="collapse-title font-semibold hover:bg-amber-600">
+      {{ product().name }}
+    </summary>
+
+    <article class="collapse-content bg-white/75 text-gray-700">
+      <img
+        class="w-full object-cover rounded-lg p-4"
+        ngSrc="images/azoka.jpg"
+        alt="{{ product().name }}"
+        width="600" 
+        height="600"
+      />
+
+      <p class="text-lg font-medium">
+        {{ product().description }}
+      </p>
+      <p class="text-lg font-medium">
+        Precio: <strong>{{ product().price }}</strong> .-
+      </p>
+      <button class="btn w-full mt-4 bg-orange-500 hover:bg-orange-500/70 my-4">
+        Agregar
+      </button>
+    </article>
+</details>

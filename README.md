@@ -1,3 +1,34 @@
+# Kartax Angular 21
+
+## Components
+```sh
+ng g s core/helpers/api-response-service --skip-tests
+ng g interface core/models/api-response-model
+ng g interface core/models/category-model
+ng g interface core/models/group-model
+ng g interface core/models/product-model
+ng g s core/services/mobile-service --skip-tests
+
+ng g c layouts/admin-layout --skip-tests --style=none
+ng g c layouts/mobile-layout --skip-tests --style=none
+ng g c layouts/public-layout --skip-tests --style=none
+
+ng g c shared/components/cart-component --skip-tests --style=none
+ng g c shared/components/footer-component --skip-tests --style=none
+ng g c shared/components/navbar-component --skip-tests --style=none
+
+ng g c features/mobile/components/product-category-component --skip-tests --style=none
+ng g c features/mobile/components/product-group-component --skip-tests --style=none
+ng g c features/mobile/components/product-item-component --skip-tests --style=none
+ng g c features/mobile/pages/products-page --skip-tests --style=none
+```
+
+---
+---
+---
+---
+---
+
 # KartaxAppAngular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.

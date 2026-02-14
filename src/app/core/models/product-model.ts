@@ -1,0 +1,17 @@
+export interface ProductModel {
+  id_product: number,
+  name: string,
+  description: string,
+  price: number,
+  img_url: string,
+  is_fractional: boolean,
+  base_unit: string,
+  sale_unit: string,
+  stock: string,
+  waste_percentage: string,
+  is_enable: boolean,
+  created_at: string,
+  updated_at: string,
+  parent_product_id: number,
+  group_id: number
+}

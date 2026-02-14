@@ -1,0 +1,9 @@
+<section class="bg-red-800 text-white p-4 font-bold text-center text-lg">
+  {{ group().name }}
+</section>
+
+@for (product of group().products; track $index) {
+  <div class="mb-1">
+    <app-product-item-component [product]="product"/>
+  </div>
+}
