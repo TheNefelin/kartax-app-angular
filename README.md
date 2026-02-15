@@ -61,35 +61,49 @@ project
 
 ## Components
 ```sh
+# ----------------------------------------------------------------------------
+# CORE
 ng g s core/services/api-service --skip-tests
 ng g s core/services/mobile-service --skip-tests
 
+# ----------------------------------------------------------------------------
+# LAYOUTS
 ng g c layouts/layout-mobile --skip-tests --style=none
 ng g c layouts/layout-public --skip-tests --style=none
 ng g c layouts/components/navbar-mobile-component --skip-tests --style=none
 ng g c layouts/components/navbar-public-component --skip-tests --style=none
 ng g c layouts/components/footer-component --skip-tests --style=none
 
+# ----------------------------------------------------------------------------
+# SHARED
 ng g c shared/components/cart-component --skip-tests --style=none
 ng g c shared/components/loading-component --skip-tests --style=none
 ng g interface shared/models/api-response-model
 
+# ----------------------------------------------------------------------------
+# FEATURES MOBILE
 ng g c features/mobile/components/product-category-component --skip-tests --style=none
 ng g c features/mobile/components/product-group-component --skip-tests --style=none
 ng g c features/mobile/components/product-item-component --skip-tests --style=none
 ng g c features/mobile/pages/products-page --skip-tests --style=none
 ng g c features/mobile/pages/order-page --skip-tests --style=none
-ng g interface features/categories/models/category-model
-ng g interface features/group/models/group-model
-ng g interface features/products/models/product-model
-ng g interface features/mobile/models/category-hierarchy-model
-ng g interface features/mobile/models/group-hierarchy-model
-ng g s features/categories/services/category-service --skip-tests
-ng g s features/group/services/groups-service --skip-tests
-ng g s features/products/services/product-service --skip-tests
 ng g s features/mobile/services/mobile-service --skip-tests
 
-ng g c features/public/pages/home-page --skip-tests --style=none
+# FEATURES CATEGORIES
+ng g interface features/categories/models/category-model
+ng g s features/categories/services/category-service --skip-tests
+
+# FEATURES GROUPS
+ng g interface features/groups/models/group-model
+ng g s features/groups/services/groups-service --skip-tests
+
+# FEATURES PRODUCTS
+ng g interface features/products/models/product-model
+ng g s features/products/services/product-service --skip-tests
+
+# FEATURES MOBILE
+ng g interface features/mobile/models/category-hierarchy-model
+ng g interface features/mobile/models/group-hierarchy-model
 
 ```
 
