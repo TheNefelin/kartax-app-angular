@@ -13,5 +13,5 @@ export interface ProductModel {
   created_at: string,
   updated_at: string,
   parent_product_id: number,
-  group_id: number
+  group_id: number,
 }

@@ -1,26 +1,96 @@
 # Kartax Angular 21
+```
+project
+│
+├─ public/
+│   ├─ images/
+│   └─ favicon.ico
+│
+├─ src/
+│   ├─ app/
+│   │   ├─ core/
+│   │   │   └─ services/
+│   │   │       └─ api-response-service.ts
+│   │   │
+│   │   ├─ features/
+│   │   │   ├─ mobile/
+│   │   │   │   ├─ components/
+│   │   │   │   │   ├─ product-group-component/
+│   │   │   │   │   ├─ product-item-component/
+│   │   │   │   │   └─ product-list-component/
+│   │   │   │   ├─ pages/
+│   │   │   │   │   ├─ order-page/
+│   │   │   │   │   └─ products-page/
+│   │   │   │   └─ news.routes.ts
+│   │   │   │
+│   │   │   └─ public/
+│   │   │       ├─ pages/
+│   │   │       │   └─ home-page/
+│   │   │       └─ news.routes.ts
+│   │   │
+│   │   ├─ layouts/
+│   │   │   ├─ components/
+│   │   │   │   ├─ footer-component/
+│   │   │   │   ├─ navbar-mobile-component/
+│   │   │   │   └─ navbar-public-component/
+│   │   │   ├─ layout-mobile/
+│   │   │   └─ layout-public/
+│   │   │
+│   │   ├─ shared/
+│   │   │   ├─ components/
+│   │   │   │   ├─ cart-component/
+│   │   │   │   └─ loading-component/
+│   │   │   └─ models/
+│   │   │       └─ api-response-model.ts
+│   │   │
+│   │   ├─ app.config.ts
+│   │   ├─ app.html
+│   │   ├─ app.routes.ts
+│   │   └─ app.ts
+│   │
+│   ├── environments/
+│   │   └── environment.ts
+│   │
+│   ├─ index.html
+│   ├─ main.ts
+│   └─ styles.css
+│
+├─ LICENSE.txt
+└─ README.md
+```
 
 ## Components
 ```sh
-ng g s core/helpers/api-response-service --skip-tests
-ng g interface core/models/api-response-model
-ng g interface core/models/category-model
-ng g interface core/models/group-model
-ng g interface core/models/product-model
+ng g s core/services/api-service --skip-tests
 ng g s core/services/mobile-service --skip-tests
 
-ng g c layouts/admin-layout --skip-tests --style=none
-ng g c layouts/mobile-layout --skip-tests --style=none
-ng g c layouts/public-layout --skip-tests --style=none
+ng g c layouts/layout-mobile --skip-tests --style=none
+ng g c layouts/layout-public --skip-tests --style=none
+ng g c layouts/components/navbar-mobile-component --skip-tests --style=none
+ng g c layouts/components/navbar-public-component --skip-tests --style=none
+ng g c layouts/components/footer-component --skip-tests --style=none
 
 ng g c shared/components/cart-component --skip-tests --style=none
-ng g c shared/components/footer-component --skip-tests --style=none
-ng g c shared/components/navbar-component --skip-tests --style=none
+ng g c shared/components/loading-component --skip-tests --style=none
+ng g interface shared/models/api-response-model
 
 ng g c features/mobile/components/product-category-component --skip-tests --style=none
 ng g c features/mobile/components/product-group-component --skip-tests --style=none
 ng g c features/mobile/components/product-item-component --skip-tests --style=none
 ng g c features/mobile/pages/products-page --skip-tests --style=none
+ng g c features/mobile/pages/order-page --skip-tests --style=none
+ng g interface features/categories/models/category-model
+ng g interface features/group/models/group-model
+ng g interface features/products/models/product-model
+ng g interface features/mobile/models/category-hierarchy-model
+ng g interface features/mobile/models/group-hierarchy-model
+ng g s features/categories/services/category-service --skip-tests
+ng g s features/group/services/groups-service --skip-tests
+ng g s features/products/services/product-service --skip-tests
+ng g s features/mobile/services/mobile-service --skip-tests
+
+ng g c features/public/pages/home-page --skip-tests --style=none
+
 ```
 
 ---

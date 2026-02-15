@@ -1,5 +1,3 @@
-import { ProductModel } from "./product-model";
-
 export interface GroupModel {
   id_group: number,
   name: string,
@@ -7,5 +5,4 @@ export interface GroupModel {
   created_at: string,
   updated_at: string,
   category_id: number,
-  products: ProductModel[]
 }

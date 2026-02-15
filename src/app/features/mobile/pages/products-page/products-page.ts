@@ -1,12 +1,13 @@
 import { Component, computed, ElementRef, inject, QueryList, signal, ViewChildren } from '@angular/core';
 import { ProductGroupComponent } from "@features/mobile/components/product-group-component/product-group-component";
-import { MobileService } from '@core/services/mobile-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ApiResponseModel } from '@core/models/api-response-model';
-import { CategoryModel } from '@core/models/category-model';
 import { CartComponent } from "@shared/components/cart-component/cart-component";
+import { LoadingComponent } from "@shared/components/loading-component/loading-component";
+import { MobileService } from '@features/mobile/services/mobile-service';
+import { CategoryHierarchyModel } from '@features/mobile/models/category-hierarchy-model';
 
 @Component({
   selector: 'app-products-page',
@@ -14,14 +15,15 @@ import { CartComponent } from "@shared/components/cart-component/cart-component"
     CommonModule,
     NgOptimizedImage,
     ProductGroupComponent,
-    CartComponent
+    CartComponent,
+    LoadingComponent
 ],
   templateUrl: './products-page.html',
 })
 export class ProductsPage {
   private mobileService = inject(MobileService);
 
-  readonly selectedCategory = signal<CategoryModel | null>(null);
+  readonly selectedCategory = signal<CategoryHierarchyModel | null>(null);
 
   private categorySignal = toSignal(
     this.mobileService.getAll().pipe(
@@ -40,7 +42,7 @@ export class ProductsPage {
   categoriesResult = computed(() => this.categorySignal());
   loading = computed(() => this.categorySignal() === undefined);
 
-  selectCategory(category: CategoryModel) {
+  selectCategory(category: CategoryHierarchyModel) {
     this.selectedCategory.set(category);
   }
 
