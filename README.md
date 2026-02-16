@@ -15,8 +15,14 @@ project
 │   │   │       └─ api-response-service.ts
 │   │   │
 │   │   ├─ features/
+│   │   │   ├─ categories/
+│   │   │   │   ├─ models/
+│   │   │   │   │   └─ category-model.ts
+│   │   │   │   └─ services/
+│   │   │   │       └─ category-service.ts
 │   │   │   ├─ mobile/
 │   │   │   │   ├─ components/
+│   │   │   │   │   ├─ cart-component/
 │   │   │   │   │   ├─ product-group-component/
 │   │   │   │   │   ├─ product-item-component/
 │   │   │   │   │   └─ product-list-component/
@@ -40,7 +46,6 @@ project
 │   │   │
 │   │   ├─ shared/
 │   │   │   ├─ components/
-│   │   │   │   ├─ cart-component/
 │   │   │   │   └─ loading-component/
 │   │   │   └─ models/
 │   │   │       └─ api-response-model.ts
@@ -70,6 +75,7 @@ ng g s core/services/mobile-service --skip-tests
 
 # ----------------------------------------------------------------------------
 # LAYOUTS
+ng g c layouts/layout-admin --skip-tests --style=none
 ng g c layouts/layout-mobile --skip-tests --style=none
 ng g c layouts/layout-public --skip-tests --style=none
 ng g c layouts/components/navbar-mobile-component --skip-tests --style=none

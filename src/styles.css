@@ -3,15 +3,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@keyframes infinite-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 @font-face {
   font-family: 'Caveat';
   src: url('assets/fonts/Caveat-VariableFont_wght.ttf') format('truetype');
@@ -60,6 +51,17 @@ body {
   font-family: 'PermanentMarker', cursive;
 }
 
-.animate-infinite-scroll {
-  animation: infinite-scroll 20s linear infinite;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+  will-change: transform;
 }
