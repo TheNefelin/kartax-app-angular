@@ -1,4 +1,6 @@
 # Kartax Angular 21
+
+## Structure
 ```
 project
 │
@@ -76,15 +78,15 @@ ng g c layouts/components/footer-component --skip-tests --style=none
 
 # ----------------------------------------------------------------------------
 # SHARED
-ng g c shared/components/cart-component --skip-tests --style=none
 ng g c shared/components/loading-component --skip-tests --style=none
 ng g interface shared/models/api-response-model
 
 # ----------------------------------------------------------------------------
 # FEATURES MOBILE
-ng g c features/mobile/components/product-category-component --skip-tests --style=none
+ng g c features/mobile/components/cart-component --skip-tests --style=none
 ng g c features/mobile/components/product-group-component --skip-tests --style=none
 ng g c features/mobile/components/product-item-component --skip-tests --style=none
+ng g c features/mobile/components/product-list-component --skip-tests --style=none
 ng g c features/mobile/pages/products-page --skip-tests --style=none
 ng g c features/mobile/pages/order-page --skip-tests --style=none
 ng g s features/mobile/services/mobile-service --skip-tests

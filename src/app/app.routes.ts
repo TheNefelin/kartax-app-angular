@@ -5,11 +5,11 @@ import { LayoutPublic } from '@layouts/layout-public/layout-public';
 export const routes: Routes = [
   {
     path: '',
-    component: LayoutMobile,
-    loadChildren: () => import('@features/mobile/mobile.routes').then(m => m.MOBILE_ROUTES),
+    component: LayoutPublic,
   },
   {
-    path: 'public',
-    component: LayoutPublic,
+    path: 'mobile',
+    component: LayoutMobile,
+    loadChildren: () => import('@features/mobile/mobile.routes').then(m => m.MOBILE_ROUTES),
   },
 ];
