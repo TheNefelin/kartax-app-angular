@@ -78,16 +78,21 @@ ng g s core/services/mobile-service --skip-tests
 ng g c layouts/layout-admin --skip-tests --style=none
 ng g c layouts/layout-mobile --skip-tests --style=none
 ng g c layouts/layout-public --skip-tests --style=none
+ng g c layouts/components/footer-component --skip-tests --style=none
 ng g c layouts/components/navbar-mobile-component --skip-tests --style=none
 ng g c layouts/components/navbar-public-component --skip-tests --style=none
-ng g c layouts/components/footer-component --skip-tests --style=none
 
 # ----------------------------------------------------------------------------
 # SHARED
-ng g c shared/components/loading-component --skip-tests --style=none
 ng g interface shared/models/api-response-model
+ng g c shared/components/loading-component --skip-tests --style=none
+ng g c shared/components/message-error-component --skip-tests --style=none
 
 # ----------------------------------------------------------------------------
+# FEATURES DASHBOARD
+ng g interface features/dashboard/models/dashboard-route-model
+ng g c features/dashboard/components/dashboard-component --skip-tests --style=none
+
 # FEATURES MOBILE
 ng g c features/mobile/components/cart-component --skip-tests --style=none
 ng g c features/mobile/components/product-group-component --skip-tests --style=none
@@ -100,6 +105,9 @@ ng g s features/mobile/services/mobile-service --skip-tests
 # FEATURES CATEGORIES
 ng g interface features/categories/models/category-model
 ng g s features/categories/services/category-service --skip-tests
+ng g c features/categories/components/category-list-component --skip-tests --style=none
+ng g c features/categories/components/category-row-component --skip-tests --style=none
+ng g c features/categories/pages/category-page-component --skip-tests --style=none
 
 # FEATURES GROUPS
 ng g interface features/groups/models/group-model

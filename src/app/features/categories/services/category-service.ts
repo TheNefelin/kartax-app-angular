@@ -9,11 +9,11 @@ import { CategoryModel } from '@features/categories/models/category-model';
 })
 export class CategoryService {
   private apiResponseService = inject(ApiService)
-  private readonly endpoint = 'news';
+  private readonly endpoint = 'categories';
 
   getAll(): Observable<ApiResponseModel<CategoryModel[]>> {
     return this.apiResponseService.getAll<ApiResponseModel<CategoryModel[]>>(
-      `${this.endpoint}/categories`
+      `${this.endpoint}`
     );
   }
 
@@ -29,7 +29,7 @@ export class CategoryService {
     formData.append('alts', alt);
 
     return this.apiResponseService.create<ApiResponseModel<CategoryModel>, FormData>(
-      `${this.endpoint}/news/${news_id}`, formData
+      `${this.endpoint}/${news_id}`, formData
     );
   }
 
