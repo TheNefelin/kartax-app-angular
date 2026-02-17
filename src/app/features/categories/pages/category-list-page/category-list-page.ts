@@ -1,25 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { CategoryListComponent } from "@features/categories/components/category-list-component/category-list-component";
 import { CategoryModel } from '@features/categories/models/category-model';
 import { CategoryService } from '@features/categories/services/category-service';
 import { ApiResponseModel } from '@shared/models/api-response-model';
 import { catchError, finalize, of } from 'rxjs';
 import { LoadingComponent } from "@shared/components/loading-component/loading-component";
-import { MessageErrorComponent } from '@shared/components/message-error-component/message-error-component';
+import { CategoryListComponent } from "@features/categories/components/category-list-component/category-list-component";
+import { MessageErrorComponent } from "@shared/components/message-error-component/message-error-component";
 
 @Component({
-  selector: 'app-category-page-component',
-  imports: [
-    CommonModule,
-    CategoryListComponent,
-    LoadingComponent,
-    MessageErrorComponent,
-],
-  templateUrl: './category-page-component.html',
+  selector: 'app-category-list-page',
+  imports: [LoadingComponent, CategoryListComponent, MessageErrorComponent],
+  templateUrl: './category-list-page.html',
 })
-export class CategoryPageComponent {
+export class CategoryListPage {
   private categoryService = inject(CategoryService);
 
   readonly loading = signal(true);

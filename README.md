@@ -107,7 +107,8 @@ ng g interface features/categories/models/category-model
 ng g s features/categories/services/category-service --skip-tests
 ng g c features/categories/components/category-list-component --skip-tests --style=none
 ng g c features/categories/components/category-row-component --skip-tests --style=none
-ng g c features/categories/pages/category-page-component --skip-tests --style=none
+ng g c features/categories/pages/category-form-page --skip-tests --style=none
+ng g c features/categories/pages/category-list-page --skip-tests --style=none
 
 # FEATURES GROUPS
 ng g interface features/groups/models/group-model
