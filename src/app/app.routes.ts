@@ -18,7 +18,7 @@ export const routes: Routes = [
     component: LayoutAdmin,
     children: [
       {
-        path: '',
+        path: 'categories',
         loadChildren: () => import('@features/categories/categories.routes').then(m => m.CATEGORY_ROUTES),
       },
     ],
