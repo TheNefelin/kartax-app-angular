@@ -22,6 +22,7 @@ export class CategoryRowComponent {
   }
 
   protected onEdit(item: CategoryModel): void {
-    this.router.navigate([ROUTES_CONSTANT.PROTECTED.ADMIN.CATEGORIES, 'form'], { state: { url: item } });
+    console.log('Editando categoría:', item);
+    this.router.navigate([ROUTES_CONSTANT.PROTECTED.ADMIN.CATEGORIES, 'form'], { state: { category: item } });
   }
 }

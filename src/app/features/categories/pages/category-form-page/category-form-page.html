@@ -1,1 +1,14 @@
-<p>category-form-page works!</p>
+<div class="p-4">
+  <button
+    [routerLink]="ROUTES_CONSTANT.PROTECTED.ADMIN.CATEGORIES"
+    class="btn btn-primary">
+    
+    Volver
+  </button>
+</div>
+
+<div class="p-4">
+  <app-category-form-component [loading]="false" [category]="category()"/>
+</div>
+
+<pre>{{ category() | json }}</pre>

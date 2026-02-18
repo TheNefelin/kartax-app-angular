@@ -1,11 +1,20 @@
+<button 
+  [routerLink]="ROUTES_CONSTANT.PROTECTED.ADMIN.CATEGORIES + '/form'"
+  class="btn btn-primary m-4">
+  
+  Crear nueva categoría
+</button>
+
 @if (loading()) {
   <div class="flex justify-center p-4">
     <app-loading-component />
   </div>
 } @else {
-  @if (categoriesResult()?.isSuccess) {
-    <app-category-list-component [categoryList]="categoriesResult()?.result || []" />
-  } @else {
-    <app-message-error-component [message]="categoriesResult()?.message || 'Error al cargar las categorías'" />
-  }
+  <div class="p-4">
+    @if (categoriesResult()?.isSuccess) {
+      <app-category-list-component [categoryList]="categoriesResult()?.result || []" />
+    } @else {
+      <app-message-error-component [message]="categoriesResult()?.message || 'Error al cargar las categorías'" />
+    }
+  </div>
 }

@@ -105,6 +105,7 @@ ng g s features/mobile/services/mobile-service --skip-tests
 # FEATURES CATEGORIES
 ng g interface features/categories/models/category-model
 ng g s features/categories/services/category-service --skip-tests
+ng g c features/categories/components/category-form-component --skip-tests --style=none
 ng g c features/categories/components/category-list-component --skip-tests --style=none
 ng g c features/categories/components/category-row-component --skip-tests --style=none
 ng g c features/categories/pages/category-form-page --skip-tests --style=none
@@ -121,6 +122,9 @@ ng g s features/products/services/product-service --skip-tests
 # FEATURES MOBILE
 ng g interface features/mobile/models/category-hierarchy-model
 ng g interface features/mobile/models/group-hierarchy-model
+
+# FEATURES NOT FOUND
+ng g c features/not-found/pages/not-found-page --skip-tests --style=none
 
 ```
 

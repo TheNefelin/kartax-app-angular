@@ -1,4 +1,3 @@
-
 export const ROUTES_CONSTANT = {
   HOME: '/',
   PROTECTED: {

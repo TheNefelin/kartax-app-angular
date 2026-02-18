@@ -7,14 +7,22 @@ import { catchError, finalize, of } from 'rxjs';
 import { LoadingComponent } from "@shared/components/loading-component/loading-component";
 import { CategoryListComponent } from "@features/categories/components/category-list-component/category-list-component";
 import { MessageErrorComponent } from "@shared/components/message-error-component/message-error-component";
+import { ROUTES_CONSTANT } from '@shared/constants/routes-constant';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-category-list-page',
-  imports: [LoadingComponent, CategoryListComponent, MessageErrorComponent],
+  imports: [
+    LoadingComponent,
+    CategoryListComponent,
+    MessageErrorComponent,
+    RouterLink,
+],
   templateUrl: './category-list-page.html',
 })
 export class CategoryListPage {
   private categoryService = inject(CategoryService);
+  ROUTES_CONSTANT=ROUTES_CONSTANT;
 
   readonly loading = signal(true);
   readonly selectedCategory = signal<CategoryModel | null>(null);
