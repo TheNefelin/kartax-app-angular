@@ -24,6 +24,18 @@ export const routes: Routes = [
         loadChildren: () => import('@features/categories/categories.routes').then(m => m.CATEGORY_ROUTES),
       },
       {
+        path: 'groups',
+        loadChildren: () => import('@features/groups/groups.routes').then(m => m.GROUP_ROUTES),
+      },
+      {
+        path: 'products',
+        loadChildren: () => import('@features/products/products.routes').then(m => m.PRODUCTS_ROUTES),
+      },
+      {
+        path: 'kartax',
+        loadChildren: () => import('@features/kartax/kartax.routes').then(m => m.KARTAX_ROUTES),
+      },
+      {
         path: 'test',
         component: TestPage
       },

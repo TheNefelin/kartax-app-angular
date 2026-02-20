@@ -1,30 +1,26 @@
 import { Component, computed, inject } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { CategoryService } from '@features/categories/services/category-service';
+import { GroupService } from '@features/groups/services/group-service';
 import { map } from 'rxjs';
-import { LoadingComponent } from "@shared/components/loading-component/loading-component";
-import { CategoryListComponent } from "@features/categories/components/category-list-component/category-list-component";
 import { MessageErrorComponent } from "@shared/components/message-error-component/message-error-component";
-import { ROUTES_CONSTANT } from '@shared/constants/routes-constant';
-import { RouterLink } from "@angular/router";
+import { LoadingComponent } from "@shared/components/loading-component/loading-component";
+import { JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-category-list-page',
+  selector: 'app-group-list-page',
   imports: [
-    LoadingComponent,
-    CategoryListComponent,
-    MessageErrorComponent,
-    RouterLink,
-],
-  templateUrl: './category-list-page.html',
+    JsonPipe,
+    MessageErrorComponent, 
+    LoadingComponent
+  ],
+  templateUrl: './group-list-page.html',
 })
-export class CategoryListPage {
-  ROUTES_CONSTANT=ROUTES_CONSTANT;
-  private readonly categoryService = inject(CategoryService);
+export class GroupListPage {
+  private readonly groupService = inject(GroupService);
 
   private readonly dataRX = rxResource({
     stream: () => {    
-      return this.categoryService.getAll().pipe(
+      return this.groupService.getAll().pipe(
         map(response => {
           if (!response.isSuccess) throw new Error(response.message);
   

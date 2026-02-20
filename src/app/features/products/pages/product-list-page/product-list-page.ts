@@ -1,30 +1,26 @@
+import { JsonPipe } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { CategoryService } from '@features/categories/services/category-service';
+import { ProductService } from '@features/products/services/product-service';
 import { map } from 'rxjs';
 import { LoadingComponent } from "@shared/components/loading-component/loading-component";
-import { CategoryListComponent } from "@features/categories/components/category-list-component/category-list-component";
 import { MessageErrorComponent } from "@shared/components/message-error-component/message-error-component";
-import { ROUTES_CONSTANT } from '@shared/constants/routes-constant';
-import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'app-category-list-page',
+  selector: 'app-product-list-page',
   imports: [
+    JsonPipe,
     LoadingComponent,
-    CategoryListComponent,
-    MessageErrorComponent,
-    RouterLink,
+    MessageErrorComponent
 ],
-  templateUrl: './category-list-page.html',
+  templateUrl: './product-list-page.html',
 })
-export class CategoryListPage {
-  ROUTES_CONSTANT=ROUTES_CONSTANT;
-  private readonly categoryService = inject(CategoryService);
+export class ProductListPage {
+  private readonly productService = inject(ProductService);
 
   private readonly dataRX = rxResource({
     stream: () => {    
-      return this.categoryService.getAll().pipe(
+      return this.productService.getAll().pipe(
         map(response => {
           if (!response.isSuccess) throw new Error(response.message);
   

@@ -3,11 +3,11 @@ import { ProductGroupComponent } from "@features/mobile/components/product-group
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ApiResponseModel } from '@shared/models/api-response-model';
 import { CartComponent } from "@features/mobile/components/cart-component/cart-component";
 import { LoadingComponent } from "@shared/components/loading-component/loading-component";
 import { MobileService } from '@features/mobile/services/mobile-service';
 import { CategoryHierarchyModel } from '@features/mobile/models/category-hierarchy-model';
+import { ApiResponseModel } from '@core/models/api-response-model';
 
 @Component({
   selector: 'app-products-page',

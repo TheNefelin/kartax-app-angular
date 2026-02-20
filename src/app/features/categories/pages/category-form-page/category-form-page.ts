@@ -1,14 +1,14 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CategoryModel } from '@features/categories/models/category-model';
 import { CategoryFormComponent } from "@features/categories/components/category-form-component/category-form-component";
-import { CommonModule } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { RouterLink } from "@angular/router";
 import { ROUTES_CONSTANT } from '@shared/constants/routes-constant';
 
 @Component({
   selector: 'app-category-form-page',
   imports: [
-    CommonModule,
+    JsonPipe,
     CategoryFormComponent,
     RouterLink
 ],

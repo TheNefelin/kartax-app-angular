@@ -6,6 +6,7 @@ export const ROUTES_CONSTANT = {
       CATEGORIES: '/admin/categories',
       GROUPS: '/admin/groups',
       PRODUCTS: '/admin/products',
+      MOBILE: '/admin/kartax',
       TEST: '/admin/test',
     }
   }

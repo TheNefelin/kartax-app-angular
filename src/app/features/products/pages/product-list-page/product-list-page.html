@@ -1,0 +1,11 @@
+@if (errorMessage()) {
+  <app-message-error-component [message]="errorMessage()!" />
+}
+
+@if (isLoading()) {
+  <div class="flex justify-center p-4">
+    <app-loading-component />
+  </div>
+} @else {
+  <pre>{{ dataComputed() | json}}</pre>
+}
