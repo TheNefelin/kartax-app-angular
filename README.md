@@ -73,6 +73,9 @@ project
 ng g s core/services/api-service --skip-tests
 ng g s core/services/mobile-service --skip-tests
 
+ng g c core/pages/not-found-page --skip-tests --style=none
+ng g c core/pages/test-page --skip-tests --style=none
+
 # ----------------------------------------------------------------------------
 # LAYOUTS
 ng g c layouts/layout-admin --skip-tests --style=none
@@ -122,9 +125,6 @@ ng g s features/products/services/product-service --skip-tests
 # FEATURES MOBILE
 ng g interface features/mobile/models/category-hierarchy-model
 ng g interface features/mobile/models/group-hierarchy-model
-
-# FEATURES NOT FOUND
-ng g c features/not-found/pages/not-found-page --skip-tests --style=none
 
 ```
 

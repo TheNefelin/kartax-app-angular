@@ -6,6 +6,7 @@ export const ROUTES_CONSTANT = {
       CATEGORIES: '/admin/categories',
       GROUPS: '/admin/groups',
       PRODUCTS: '/admin/products',
+      TEST: '/admin/test',
     }
   }
 } as const;
