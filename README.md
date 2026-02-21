@@ -92,12 +92,6 @@ ng g c features/categories/pages/category-list-page --skip-tests --style=none
 ng g s features/categories/services/category-service --skip-tests
 
 # ----------------------------------------------------------------------------
-# FEATURES DASHBOARD
-ng g c features/dashboard/components/dashboard-component --skip-tests --style=none
-
-ng g interface features/dashboard/models/dashboard-route-model
-
-# ----------------------------------------------------------------------------
 # FEATURES GROUPS
 ng g interface features/groups/models/group-model
 
@@ -122,6 +116,7 @@ ng g c features/kartax/pages/mobile-page --skip-tests --style=none
 
 # ----------------------------------------------------------------------------
 # LAYOUTS
+ng g c layouts/components/dashboard-component --skip-tests --style=none
 ng g c layouts/components/footer-component --skip-tests --style=none
 ng g c layouts/components/navbar-mobile-component --skip-tests --style=none
 ng g c layouts/components/navbar-public-component --skip-tests --style=none
@@ -134,6 +129,8 @@ ng g c layouts/layout-public --skip-tests --style=none
 # SHARED
 ng g c shared/components/loading-component --skip-tests --style=none
 ng g c shared/components/message-error-component --skip-tests --style=none
+
+ng g interface shared/models/route-model
 
 # ----------------------------------------------------------------------------
 

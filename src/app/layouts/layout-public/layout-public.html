@@ -1,21 +1,11 @@
-<div class="w-full overflow-hidden bg-base-200 py-8">
-  <div class="flex min-w-full gap-6 animate-scroll">
+<section class="grid min-h-dvh grid-rows-[auto_1fr_auto]">
 
-    <!-- set original -->
-    <img src="https://picsum.photos/id/1015/600/300" class="w-96 h-60 object-cover rounded-box shadow-lg flex shrink-0" />
-    <img src="https://picsum.photos/id/1016/600/300" class="w-96 h-60 object-cover rounded-box shadow-lg flex shrink-0" />
-    <img src="https://picsum.photos/id/1018/600/300" class="w-96 h-60 object-cover rounded-box shadow-lg flex shrink-0" />
+  <app-navbar-public-component [navBarRoute]="LAYOUT_PUBLIC_DASHBOARD_NAVIGATION"/>
 
-    <!-- duplicado exacto -->
-    <img src="https://picsum.photos/id/1015/600/300" class="w-96 h-60 object-cover rounded-box shadow-lg flex shrink-0" />
-    <img src="https://picsum.photos/id/1016/600/300" class="w-96 h-60 object-cover rounded-box shadow-lg flex shrink-0" />
-    <img src="https://picsum.photos/id/1018/600/300" class="w-96 h-60 object-cover rounded-box shadow-lg flex shrink-0" />
+  <main>
+    <router-outlet/>
+  </main>
 
-  </div>
-</div>
+  <app-footer-component/>
 
-
-<section class="flex justify-center gap-4 py-8">
-  <button routerLink="admin" class="btn btn-success">Admin</button>
-  <button routerLink="mobile" class="btn btn-success">Mobile App</button>
 </section>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DashboardComponent } from '@features/dashboard/components/dashboard-component/dashboard-component';
-import { LAYOUT_DASHBOARD_ADMIN_NAVIGATION } from '@shared/constants/layout-dashboard-admin-routes';
+import { DashboardComponent } from '@layouts/components/dashboard-component/dashboard-component';
+import { LAYOUT_ADMIN_DASHBOARD_NAVIGATION } from '@shared/constants/layout-admin-dashboard-routes';
 
 @Component({
   selector: 'app-layout-admin',
@@ -10,5 +10,5 @@ import { LAYOUT_DASHBOARD_ADMIN_NAVIGATION } from '@shared/constants/layout-dash
   templateUrl: './layout-admin.html',
 })
 export class LayoutAdmin {
-  LAYOUT_DASHBOARD_ADMIN_NAVIGATION = LAYOUT_DASHBOARD_ADMIN_NAVIGATION;
+  LAYOUT_ADMIN_DASHBOARD_NAVIGATION = LAYOUT_ADMIN_DASHBOARD_NAVIGATION;
 }

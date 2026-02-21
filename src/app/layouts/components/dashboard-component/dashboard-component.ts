@@ -1,18 +1,15 @@
 import { Component, inject, input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { RouterLink, RouterOutlet } from "@angular/router";
-import { DashboardRouteModel } from '@features/dashboard/models/dashboard-route-model';
+import { RouteModel } from '@shared/models/route-model';
 
 @Component({
   selector: 'app-dashboard-component',
-  imports: [
-    RouterOutlet,
-    RouterLink,
-  ],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './dashboard-component.html',
 })
 export class DashboardComponent {
-  readonly dashboardRoute = input.required<DashboardRouteModel[]>();
+  readonly dashboardRoute = input.required<RouteModel[]>();
 
   readonly sanitizer = inject(DomSanitizer);
 
