@@ -77,7 +77,7 @@ export class SlideComponent {
     if (!this.isDragging) return;
 
     const delta = event.clientX - this.startX;
-    this.dragOffset = delta * 0.25;
+    this.dragOffset = delta * 0.50;
   }
 
   onPointerUp() {
