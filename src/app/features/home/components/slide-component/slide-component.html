@@ -1,17 +1,26 @@
 <div class="w-full flex justify-center py-10 bg-base-200 overflow-hidden">
   
-  <div class="relative w-full max-w-225 aspect-4/3 perspective">
+  <div 
+    class="relative w-full max-w-225 aspect-4/3 perspective touch-none"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp()"
+    (pointercancel)="onPointerUp()"
+    (mouseleave)="onPointerUp()"
+    (mouseenter)="pauseAutoPlay()"
+    (mouseleave)="resumeAutoPlay()"
+  >
     
-    <!-- CONTROLES FLOTANTES -->
+    <!-- BOTONES -->
     <button 
-      class="btn btn-circle btn-primary absolute left-2 top-1/2 -translate-y-1/2 z-50 pointer-events-auto"
+      class="btn btn-circle btn-primary absolute left-2 top-1/2 -translate-y-1/2 z-50"
       (click)="prev()"
     >
       ❮
     </button>
 
     <button 
-      class="btn btn-circle btn-primary absolute right-2 top-1/2 -translate-y-1/2 z-50 pointer-events-auto"
+      class="btn btn-circle btn-primary absolute right-2 top-1/2 -translate-y-1/2 z-50"
       (click)="next()"
     >
       ❯
@@ -19,8 +28,9 @@
 
     <!-- CONTENEDOR 3D -->
     <div 
-      class="relative w-full h-full transition-transform duration-700 ease-in-out preserve-3d pointer-events-none"
-      [style.transform]="'rotateY(' + currentRotation + 'deg)'"
+      class="relative w-full h-full preserve-3d duration-700 ease-in-out"
+      [ngClass]="{ 'transition-transform': !isDragging }"
+      [style.transform]="transformStyle"
     >
       
       @for (slide of slides; track $index; let i = $index) {
@@ -43,5 +53,3 @@
     </div>
   </div>
 </div>
-
-<app-slide-component/>

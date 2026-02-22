@@ -102,6 +102,8 @@ ng g s features/groups/services/group-service --skip-tests
 
 # ----------------------------------------------------------------------------
 # FEATURES HOME
+ng g c features/home/components/slide-component --skip-tests --style=none
+
 ng g c features/home/pages/home-page --skip-tests --style=none
 
 # ----------------------------------------------------------------------------
