@@ -9,6 +9,7 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutPublic,
+    loadChildren: () => import('@features/home/home.routes').then(m => m.HOME_ROUTES) 
   },
   {
     path: 'mobile',

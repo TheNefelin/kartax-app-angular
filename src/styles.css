@@ -51,17 +51,11 @@ body {
   font-family: 'PermanentMarker', cursive;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+
+.perspective {
+  perspective: 1200px;
 }
 
-
-.animate-scroll {
-  animation: scroll 25s linear infinite;
-  will-change: transform;
+.preserve-3d {
+  transform-style: preserve-3d;
 }

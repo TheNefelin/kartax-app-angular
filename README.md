@@ -101,6 +101,10 @@ ng g c features/groups/pages/group-list-page --skip-tests --style=none
 ng g s features/groups/services/group-service --skip-tests
 
 # ----------------------------------------------------------------------------
+# FEATURES HOME
+ng g c features/home/pages/home-page --skip-tests --style=none
+
+# ----------------------------------------------------------------------------
 # FEATURES PRODUCTS
 ng g interface features/products/models/product-model
 
