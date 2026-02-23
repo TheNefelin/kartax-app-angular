@@ -17,6 +17,11 @@ export const routes: Routes = [
     loadChildren: () => import('@features/mobile/mobile.routes').then(m => m.MOBILE_ROUTES),
   },
   {
+    path: 'kartax',
+    component: LayoutMobile,
+    loadChildren: () => import('@features/kartax/kartax.routes').then(m => m.KARTAX_ROUTES),
+  },
+  {
     path: 'admin',
     component: LayoutAdmin,
     children: [

@@ -2,7 +2,8 @@ export const ROUTES_CONSTANT = {
   HOME: '/',
   PUBLIC: {
     PANEL: 'admin',
-    MOBILE: 'mobile'
+    MOBILE: 'mobile',
+    KARTAX: '/kartax',
   },
   PROTECTED: {
     ADMIN: {

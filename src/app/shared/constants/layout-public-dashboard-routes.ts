@@ -12,4 +12,9 @@ export const LAYOUT_PUBLIC_DASHBOARD_NAVIGATION: RouteModel[] = [
     route: ROUTES_CONSTANT.PUBLIC.MOBILE,
     iconSvg: '',
   },
+  {
+    name: 'kartax',
+    route: ROUTES_CONSTANT.PUBLIC.KARTAX,
+    iconSvg: '',
+  },
 ]
